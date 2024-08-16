@@ -48,7 +48,9 @@ def clone_or_update_repo(repo_url, local_dir):
 
 def setup_repo(repo_url, local_dir):
     """
+    Wrapper function for clone_or_update_repo.
     Sets up the repository by cloning or updating it.
+
 
     Parameters
     ----------
