@@ -1,14 +1,15 @@
 import os
 from .repo_manager import clone_or_update_repo
 
-# Set the correct local directory where the input data is stored
-local_dir = '/Users/aleks/Desktop/webapp'
+# Dynamically set the local directory based on the user's home directory
+home_dir = os.path.expanduser("~")
+local_dir = os.path.join(home_dir, 'webapp')
 
 # Clone or update the repository
 repo_url = 'https://github.com/aleksandar42/webapp.git'
 clone_or_update_repo(repo_url, local_dir)
 
-# Locate where current file is in the directory
+# Locate where the current file is in the directory
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Set up your paths using the local directory
