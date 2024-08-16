@@ -13,6 +13,7 @@ def setup_layout(city_options, date_marks, neighborhoods_geojson, neighborhood_s
 
     Generative AI was used to help set the structure of the layout
     and help bug fixing when certain containers were not correctly positioned.
+    It also helped to use correct the synatx.
 
 
     Parameters

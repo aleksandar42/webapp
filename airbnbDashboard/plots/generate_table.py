@@ -45,7 +45,7 @@ def generate_table(dataframe, width=1000, height=600):
                          'ID' if col == 'id' else
                          col for col in dataframe.columns]
 
-    # Create Plotly table & customize style and layout
+    # Create Plotly table & customize style + layout
     fig = go.Figure(data=[go.Table(
         header=dict(
             values=[f'<b>{col}</b>' for col in dataframe.columns],

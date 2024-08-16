@@ -1,7 +1,7 @@
 from dash import dcc, html
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
-import plotly.graph_objects as go  # Import for go.Figure
+import plotly.graph_objects as go 
 
 from airbnbDashboard.plots import update_map, update_scatter_plot, get_sort_options, generate_sorted_table
 from airbnbDashboard.utils.helpers import get_neighborhood_options, filter_listings
