@@ -8,7 +8,7 @@ The slider is created for selecting the date range for the data displayed.
 
 Imports:
 --------
-update_map
+generate_map
     A function to generate the choropleth map based on the selected city and the aggregated statistics for each city.
 
 generate_table
@@ -38,8 +38,8 @@ get_unique_dates
 Usage
 -----
 To generate the choropleth map:
->>> from plots import update_map
->>> fig = update_map(selected_city, listings_data)
+>>> from plots import generate_map
+>>> fig = generate_map(selected_city, listings_data)
 
 To generate the table:
 >>> from plots import generate_table
@@ -58,16 +58,16 @@ To generate date marks:
 >>> date_marks = generate_date_marks(unique_dates)
 
 The `__all__` list specifies the public API of the package, indicating that only
-`update_map`, `generate_table`, `generate_sorted_table`, `get_sort_options`, `get_column_options`, `update_scatter_plot`, `create_date_slider`, `generate_date_marks`, and `get_unique_dates` should be accessible when the package is imported.
+`generate_map`, `generate_table`, `generate_sorted_table`, `get_sort_options`, `get_column_options`, `update_scatter_plot`, `create_date_slider`, `generate_date_marks`, and `get_unique_dates` should be accessible when the package is imported.
 """
 
-from airbnbDashboard.plots.generate_map import update_map
+from airbnbDashboard.plots.generate_map import generate_map
 from airbnbDashboard.plots.generate_table import generate_table, generate_sorted_table, get_sort_options, get_column_options
 from airbnbDashboard.plots.generate_scatter import update_scatter_plot
 from airbnbDashboard.plots.slider import get_unique_dates, generate_date_marks, create_date_slider
 
 __all__ = [
-    'update_map', 
+    'generate_map', 
     'generate_table', 
     'generate_sorted_table', 
     'get_sort_options', 
