@@ -1,19 +1,19 @@
 import os
 from .repo_manager import clone_or_update_repo
 
-# Set your directory, where the input data is stored
-#dataset_dir = '/Users/aleks/Desktop/citydata/dashboard/'
-repo_url = 'https://github.com/aleksandar42/webapp.git'
-local_dir = os.path.join(os.path.expanduser('~'), 'webapp')
+# Set the correct local directory where the input data is stored
+local_dir = '/Users/aleks/Desktop/webapp'
 
 # Clone or update the repository
+repo_url = 'https://github.com/aleksandar42/webapp.git'
 clone_or_update_repo(repo_url, local_dir)
 
-# Locate where curent file is in the directory
+# Locate where current file is in the directory
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Set up your paths using the local directory
 dataset_dir = os.path.join(local_dir, 'data')
+
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Dictionaries
@@ -67,7 +67,8 @@ city_data = {
 colors = {
     'background': '#F5F5F5',
     'text': '#333333',
-    'primary': '#FF5A5F'
+    'primary': '#FF5A5F',
+    'light': '#FFFFFF'
     }
 
 # Dictionary: Key = column name, Value = display name
