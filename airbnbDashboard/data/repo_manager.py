@@ -8,6 +8,9 @@ def clone_or_update_repo(repo_url, local_dir):
     This function ensures the repository is up to date. If the repository has unrelated histories,
     it allows the merge to proceed. It also sets up branch tracking if not already configured.
 
+    This code was created in collaboration with generative, whereas is was always 
+    slightly modified using prompts and also manually changed. 
+
     Parameters
     ----------
     repo_url : str
