@@ -42,7 +42,7 @@ def load_data(city_paths):
     # Iterate through each city and load the corresponding CSV and GeoJSON file
     for city, paths in city_paths.items():
         try:
-            with open(paths['geojson'], 'r') as file:
+            with open(paths['geojson'], 'r', encoding='utf8') as file:
                 neighborhoods_geojson[city] = json.load(file)
         except FileNotFoundError:
             print(f"GeoJSON file for {city} not found at {paths['geojson']}") 
