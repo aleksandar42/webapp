@@ -1,7 +1,7 @@
 from dash import dcc, html
 import dash_bootstrap_components as dbc
 
-from airbnbDashboard.plots.generate_map import update_map
+from airbnbDashboard.plots.generate_map import generate_map
 from airbnbDashboard.plots.slider import create_date_slider
 from airbnbDashboard.data.paths import colors
 
@@ -93,7 +93,7 @@ def setup_layout(city_options, date_marks, neighborhoods_geojson, neighborhood_s
                     create_date_slider(date_marks),
                     style={'width': '85%', 'margin': '0 auto'}  # Set the slider width to 80%
                 ),
-                html.Div(id='map-container', children=update_map('Madrid, Spain', 1, neighborhoods_geojson, neighborhood_stats), 
+                html.Div(id='map-container', children=generate_map('Madrid, Spain', 1, neighborhoods_geojson, neighborhood_stats), 
                 style={'transition': 'transform 1s', 'width': '80%', 'margin': '0 auto', 'display': 'flex', 'justify-content': 'center', 'boxShadow': '0px 4px 10px #0000001A', 'borderRadius': '10px'}),
             ],
             style={'padding': '10px', 'backgroundColor': colors['background']}

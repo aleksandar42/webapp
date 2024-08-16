@@ -3,7 +3,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output, State
 import plotly.graph_objects as go 
 
-from airbnbDashboard.plots import update_map, update_scatter_plot, get_sort_options, generate_sorted_table
+from airbnbDashboard.plots import generate_map, update_scatter_plot, get_sort_options, generate_sorted_table
 from airbnbDashboard.utils.helpers import get_neighborhood_options, filter_listings
 from airbnbDashboard.plots.generate_scatter import update_scatter_plot
 
@@ -148,7 +148,7 @@ def register_callbacks(app, listings_data, neighborhoods_geojson, neighborhood_s
         Output('map-container', 'children'),
         [Input('city-dropdown', 'value'), Input('month-slider', 'value')]
     )
-    def update_map_callback(selected_city, selected_date_index):
+    def generate_map_callback(selected_city, selected_date_index):
         """
         Updates the map based on the selected city and date.
 
@@ -166,7 +166,7 @@ def register_callbacks(app, listings_data, neighborhoods_geojson, neighborhood_s
             A div containing the updated map figure.
         """
         selected_month = int(date_marks[selected_date_index].split('-')[1])
-        return update_map(selected_city, selected_month, neighborhoods_geojson, neighborhood_stats)
+        return generate_map(selected_city, selected_month, neighborhoods_geojson, neighborhood_stats)
 
     @app.callback(
         Output('neighborhood-dropdown', 'value'),

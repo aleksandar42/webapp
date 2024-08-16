@@ -3,7 +3,7 @@ from dash import dcc, html
 
 from airbnbDashboard.data.paths import colors, city_data
 
-def update_map(selected_city, selected_month, neighborhoods_geojson, neighborhood_stats):
+def generate_map(selected_city, selected_month, neighborhoods_geojson, neighborhood_stats):
     """
     Generates an interactive map visualization for a selected city and month using Plotly.
 
