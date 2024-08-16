@@ -10,11 +10,11 @@ from airbnbDashboard.data.repo_manager import setup_repo
 def main():
     print("Starting the application...")
 
-    # Define your repository URL and the local directory where you want to clone it
+    # Use a consistent directory for the repository
     repo_url = 'https://github.com/aleksandar42/webapp.git'
-    local_dir = os.path.join(os.path.expanduser('~'), 'webapp')
+    local_dir = os.path.join(os.path.expanduser('~'), 'Desktop/webapp')
 
-    # Set up the repository only once
+    # Set up the repository (only once)
     setup_repo(repo_url, local_dir)
 
     # Initialize the Dash app
