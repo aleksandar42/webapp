@@ -30,7 +30,7 @@ def main():
     register_callbacks(app, listings_data, neighborhoods_geojson, neighborhood_stats, date_marks)
 
     # Run the app on all available IP addresses of the server
-    app.run_server(debug=True)
+    app.run_server(debug=True, host='0.0.0.0', port=8050)
 
 if __name__ == '__main__':
     main()
