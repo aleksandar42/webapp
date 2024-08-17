@@ -15,7 +15,7 @@ def main():
     local_dir = os.path.join(os.path.expanduser('~'), 'Desktop/webapp')
 
     # Set up the repository (only once)
-    setup_repo(repo_url, local_dir)
+    #setup_repo(repo_url, local_dir)
 
     # Initialize the Dash app
     app = initialize_app()
