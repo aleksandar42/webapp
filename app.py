@@ -15,7 +15,7 @@ def main():
     local_dir = os.path.join(os.path.expanduser('~'), 'Desktop/webapp')
 
     # Set up the repository (only once)
-    #setup_repo(repo_url, local_dir)
+    setup_repo(repo_url, local_dir)
 
     # Initialize the Dash app
     app = initialize_app()
@@ -30,7 +30,8 @@ def main():
     register_callbacks(app, listings_data, neighborhoods_geojson, neighborhood_stats, date_marks)
 
     # Run the app on all available IP addresses of the server
-    app.run_server(debug=True, host='0.0.0.0', port=8050)
+    #app.run_server(debug=True, host='0.0.0.0', port=8050)
+    app.run_server(debug=True)
 
 if __name__ == '__main__':
     main()
