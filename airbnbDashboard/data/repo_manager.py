@@ -67,8 +67,3 @@ def setup_repo(repo_url, local_dir):
     print(f"Setting up repository at {local_dir}...")
     clone_or_update_repo(repo_url, local_dir)
     return local_dir
-
-# Example usage (if you want to test it separately)
-# repo_url = 'https://github.com/aleksandar42/webapp.git'
-# local_dir = os.path.join(os.path.expanduser('~'), 'webapp')
-# setup_repo(repo_url, local_dir)
