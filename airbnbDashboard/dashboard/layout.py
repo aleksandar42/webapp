@@ -11,11 +11,6 @@ def setup_layout(city_options, date_marks, neighborhoods_geojson, neighborhood_s
     It uses Dash and Dash Bootstrap Components (dbc) libraries to
     create a structured layout for the Airbnb Dashboard.
 
-    Generative AI was used to help set the structure of the layout
-    and help bug fixing when certain containers were not correctly positioned.
-    It also helped to use correct the synatx.
-
-
     Parameters
     ----------
     city_options : list
@@ -41,6 +36,12 @@ def setup_layout(city_options, date_marks, neighborhoods_geojson, neighborhood_s
     ------
     KeyError
         If the selected city is not in the listings data.
+
+    Generative AI
+    -------------
+    Generative AI was used to help set the structure of the layout
+    and help bug fixing when certain containers were not correctly positioned.
+    It also helped to use correct the syntax and add the buttons. 
     """
     return html.Div([
         # Navbar with Header and City Dropdown
@@ -52,7 +53,7 @@ def setup_layout(city_options, date_marks, neighborhoods_geojson, neighborhood_s
                             # Column for and title
                             dbc.Col(dbc.NavbarBrand("Airbnb Dashboard", className="ml-2", style={"font-size": "30px", "font-weight": "bold", "color": "white"})),
                         ],
-                        align="center",  # Center content horizontally
+                        align="center",  
                         className="g-0",  # Remove gaps between columns
                     ),
                     dbc.Row(
@@ -72,7 +73,7 @@ def setup_layout(city_options, date_marks, neighborhoods_geojson, neighborhood_s
                                 width={"size": "auto"}  
                             ),
                         ],
-                        align="center",  # Center the entire row horizontally
+                        align="center",  
                         className="g-0",  # Remove gaps between columns
                     ),
                 ],
@@ -87,18 +88,18 @@ def setup_layout(city_options, date_marks, neighborhoods_geojson, neighborhood_s
         # City selection section
         html.Div(
             [
-                # Add the slider here
+                # Slider
                 html.H2("SELECT MONTH", style={'fontSize': '19px', 'fontWeight': '580', 'textAlign': 'center', 'color': '#7F7F7F'}),
                 html.Div(
                     create_date_slider(date_marks),
-                    style={'width': '85%', 'margin': '0 auto'}  # Set the slider width to 80%
+                    style={'width': '85%', 'margin': '0 auto'}  
                 ),
                 html.Div(id='map-container', children=generate_map('Madrid, Spain', 1, neighborhoods_geojson, neighborhood_stats), 
                 style={'transition': 'transform 1s', 'width': '80%', 'margin': '0 auto', 'display': 'flex', 'justify-content': 'center', 'boxShadow': '0px 4px 10px #0000001A', 'borderRadius': '10px'}),
             ],
             style={'padding': '10px', 'backgroundColor': colors['background']}
         ),
-        # Store to hold the clicked neighborhood value
+        # holds clicked neighborhood value
         dcc.Store(id='clicked-neighborhood'),
 
         # Modal for Table with Listings
@@ -109,13 +110,14 @@ def setup_layout(city_options, date_marks, neighborhoods_geojson, neighborhood_s
                         "Neighbourhood Insights",
                         style={'fontSize': '24px', 'fontWeight': 'bold', 'color': 'white'}
                     ),
-                    style={'backgroundColor': '#FF5A5F'}  # Change this to your desired background color
+                    style={'backgroundColor': '#FF5A5F'}  
                 ),
                 dbc.ModalBody(
                     [
                         # Buttons to switch between plots
                         dbc.Row([
                             dbc.Col([
+                                # button froms generative AI -> n_clicks method
                                 dbc.Button("Price Over Time", id='price-over-time', n_clicks=0, className='mr-2', style={'backgroundColor': '#FFFFFF','color': '#FF5A5F','border': '1px solid #FF5A5F','outline': 'none','boxShadow': 'none'}),
                                 dbc.Button("Rating Over Time", id='rating-over-time', n_clicks=0, style={'backgroundColor': '#FF5A5F','color': '#FFFFFF','border': '1px solid #FFFFFF','outline': 'none','boxShadow': 'none'})
                             ], width=12, style={'textAlign': 'center', 'marginBottom': '20px'}),
@@ -153,6 +155,7 @@ def setup_layout(city_options, date_marks, neighborhoods_geojson, neighborhood_s
                                 html.H4("Order", style={'fontSize': '18px', 'marginTop': '10px', 'textAlign': 'center', 'color': colors['text']}),
                                 html.Div(
                                     children=[
+                                        # button froms generative AI -> n_clicks method
                                         dbc.Button("Ascending", id='order-asc', n_clicks=0, className='mr-2', style={'backgroundColor': '#FFFFFF','color': '#FF5A5F','border': '1px solid #FF5A5F','outline': 'none','boxShadow': 'none'}),
                                         dbc.Button("Descending", id='order-desc', n_clicks=0, style={'backgroundColor': '#FF5A5F','color': '#FFFFFF','border': '1px solid #FFFFFF','outline': 'none','boxShadow': 'none'})
                                     ],
@@ -165,7 +168,7 @@ def setup_layout(city_options, date_marks, neighborhoods_geojson, neighborhood_s
                 ),
             ],
             id="modal",
-            size="xl",  # Increase size to "xl" for better visibility
+            size="xl",  
             is_open=False,
         ),
     ], style={'fontFamily': 'Arial, sans-serif', 'padding': '0px', 'backgroundColor': colors['background']})
